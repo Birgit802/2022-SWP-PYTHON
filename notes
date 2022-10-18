@@ -1,0 +1,52 @@
+overhead- garbagecollector, compiler.interpreter code umschreiben-sicherstellen,python2 nicht mehr verwenden-kann funktionieren muss nicht , updates im mittelveröffentlichsektor, nicht zu neu. vershiedene 
+funktionalitäten, heeb und stack
+heeb - 1, ram speicher, festplatte, kann nicht volllaufen, kann nicht ausgehen, serverfarmen
+stack-mehrere stacks, alle prozesse, haben stackspeicher ist konstant, fixe größe, prozesse: adobe, tasks, firefox, 1 prozess mehrere threads, nicht miteinander kommunizieren, 
+threads sind in prozesse drin, betriebssystem gibt jedem prozess seinen speicher, wenn admin alles möglich, als user nicht möglich
+stackoverflow programm produziert soviel daten, stack läuft über, prozessabhängig
+
+cmd py 
+interpreter- programmzeilen laufen lassen
+einrückungen-leerzeichen einrückungen tab-steuerzeichen
+in py mit _
+java strikt typisiert- py nicht,typen gibt es intern
+autoboxing- java, umändern in anderen typen das code nicht abstürzt py
+dictionary 1-45 print wie zufällig die zahlen kommen
+
+garbage collection = kümmert sich dass der speicher nicht über geht| überschreibt platz der nicht verwendet wird
+nix wird gelöscht nur überschrieben
+speicher alokieren
+untersucht alle Prograamme die laufen; schaut wo steht der Programmzeiger; 
+welche Speicherstellen werden nicht mehr benutzt; speicherstelle wird freigegeben (kommt periodisch vorbei)
+
+java -> c -> assembler -> binär
+
+overhead = zusatzaufwand durch klassen
+
+heap = (Rahmenspeicher) gibts nur ein mal / betriebssystem /unbegrenzt / kann fast nicht ausgehen
+stack = kann es mehrere Male geben / jeder Prozess bekommt einen Stack / ist ein kleiner Speicher / begrenzt
+
+Prozesse = alle Programme
+1 Prozess beteht us mehreren Threaths / mehrere Prozesse können nicht miteinander kommunizieren weil das Betriebssystem das managed
+nur Betriebssysteme können auf stacks/prozesse zugreifen 
+
+wenn man py eingibt -> Pyton Interpreter
+
+Liste / Array: 
+Array wird im Speicher als Start und endstelle markiert/ alle elemente sind im Speicher wirklich hintereinander, vom Betriebssystem so vorgegeben
+Liste langsamer als Array, weil die Elemente von einer Liste / besteht aus Elementen die irgendwo im Speicher verteilt sind (Wert + zeiger wo das nächste Element ist)
+Zum Array kann man kein neues element hinzufügen/ Liste schon
+Zum Durchsuchen ist das Array feiner
+Array nur der gleiche Datentyp / Listen auch verschiedene Datentypen möglich
+
+Terminal befehle für Github:
+
+Namespace: Sichtbarkeiten; Namespace -> innerhalb davon sieht man die Variablen, außerhalb nicht
+Config Datei: .env
+
+# Swap-Funktion
+
+# list[0] , list[1] = list[1], list[0]
+
+
+

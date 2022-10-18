@@ -44,6 +44,8 @@
 #            -> Damit das nicht passiert - Deep Copy
 #   tuple, int, float ... unveränderlich -> Immutable
 
+#https://programmierkonzepte.ch/index.php?inhalt_links=navigation.inc.php&inhalt_mitte=anhang/tricks.inc.php
+
 # Hausübung : 
 # Wie werden Parameter einer Methode übergeben: (mutable , global oder lokal verändert)
 # + Poker (soll in 3 Wochen fertig sein)

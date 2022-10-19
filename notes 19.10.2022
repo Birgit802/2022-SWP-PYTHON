@@ -1,1 +1,51 @@
+#genral purpose für jede anwendung
+#interpretersprache, maschinensprache, interpretersprahe c++
+#übersetzt code direkt in maschinencode-c++---0101010101
+#interpreter macht bytecode, c# erzeugt bytecode -.class in java lesbare passagen und maschinencode
+#vorteile maschinencode kann ohne nochmals bearbeitet werden auf dieser Maschine ausgeführt werden, 64/ 32 bit
+#ARM processor-rhasberry-funktioniert auf anderer cpu-betriebssystem nicht
+#maschinencode exakt für ein betreibssystem
+#vorteil genau für diese Hardware gebaut funktioniert am besten
+#Interpreter Vorteil- code schreiben-.class datei auf jedem system mit java interpreter ausführbar-plattformunabhängig
+#auf jedem Rechner ausführbar - class datei durch interpreter nachkompiliert zwischencode dass er auf system funktioniert
+#nachteil speicher wird von iterpreter verwaltet-garbage collector-nicht 100% auf Hardware-langsam
+#python verwendet i, hintrgrund native c code
+#java c# python in c programmiert
+#assembler abkürzung für zeichen- anweisungen im prozessor- hardwarenahe spezifische Befehle
+#kompiliert und interpretiert 2 schritte 
+#mehrere py files importieren pyc modul vorkompilierte py datei entsteht
 
+#in-place
+#vertauschoperationen-temporärer Speicher-im array sortieren-nicht von Anzahl der Elemente abhängig
+#merchsort-doppelt soviel speicher-von n abhängiger Speicher
+#return wert sortieren nicht in place
+#dataframes machen viel in place- 
+#ob ein verfahren innerhalb der datenstruktur unabhängig der elemente in der Datenstruktur
+
+#Seiteneffekte mit deep copy 
+#unterschied copy deep copy- deep copy neues Register
+#liste mit nur immutable objekten-copy
+#liste mit liste- mit copy wird nur referenz kopiert
+#mit deep copy werden elemente mitgenommen
+
+#style guides
+#zeichenlänge  80 Zeichen- mit\ umbrechen dass Zeile weitergeht
+
+#imports 
+#encodieren : alle zeichen sind auf int wert-ascii tabelle- 8 bit 128 zeichen einfügen- begrnzung für anzahl der zeichen
+#zeichentabellen utf8, international programmieren, utf8 einstellen weltweit standard
+#
+#funktionalitäten ohne zusatzbibliotheken in python min-max-round
+
+#dunder variablen: name -einstiegsspunkt
+#_name_ ==_main_ : von python standardmässig befüllt, jede py bekommt unter dunder seinen dateinamen
+#pro file eine dunder variable da steht datei name drin
+#ausser bei der datei die ich mich interpreter angestartet habe---nicht name sondern main
+#in java manifest= einstiegspunkt
+
+
+#zählen poker bei der auswertung drillinge bei zwillige mitgezählt
+#wenn statistik nicht zusammenpasst
+#strasse aufpassen- 
+
+#filter---vorgefertigte funktion

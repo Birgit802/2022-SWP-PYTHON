@@ -1,1 +1,16 @@
+#digital ocean tutorial
+#python 2 auf python 3 floor division
+#input besser für eingabe
+#mit was würde man was lösen: int String float -----int ganzzahlen besser alles andere kostet zuviel speicher, int funktioniert am besten
+#string so wenig mit möglich
+#Mainmethoden machen weil grundlegende funktionen importieren
+#immer in methoden einpacken zum importieren
 
+#python debugging
+#serversystem allgemeine lösung debuggen
+#version beachten import pdb
+#docs python.org standard für python
+
+#trenärere operator nichts anderes als eine if
+#auf reihenfolge der operatoren achten--klammern setzen
+#

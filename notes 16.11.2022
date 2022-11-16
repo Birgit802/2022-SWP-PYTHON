@@ -9,10 +9,42 @@
 #lambda wird direkt ausgeführt, anonyme funktion- 
 
 #######Beispiel
+#https://www.digitalocean.com/community/tutorials/how-to-use-the-python-map-function-de
+#https://www.w3schools.com/python/python_iterators.asp
 #numbers = [10, 15, 21, 33, 42, 55]
 #mapped_numbers = list(map(lambda x: x * 2 + 3, numbers))
 #print(mapped_numbers)
 #mapped_numbers wird von innen nach aussen ausgeführt- lambda/
+
+#deep copy neue instanzen erstellt
+#copy kopieren nur in 1 ebene
+
+###OOP
+#Kapselung-information soll beschützt werden- struktur erzeugen
+#vermeidung von variablen
+#init= Konstruktor
+#self= this--zeigt auf sich selbst
+#static= ausführen ohne instanz erzeugen--
+#static variablen= klassenattribut
+#objekte sind immer mutable/veränderbar
+
+#vererbung- für die erweiterbarkeit- weniger schreibbarkeit-lesbarkeit
+# kind immer vom typ eltern---is instance of
+
+#default- parameter=irgendwas, wenn varible nicht angegeben
+#https://www.w3schools.com/python/gloss_python_function_default_parameter.asp
+
+#super= macht eine temporäre instanz von elternklase- darüber auf elternklasse zugreifen
+#mit interfaces mehrfachvererbung durch die hintertür in java
+#
+# A super() deep dive
+#super(stufe die ich haben will, self)._init......
+
+#mehrfachvererbung- angaben von links nach rechts- (triangle, square) wenn gleiche methodennamen wird der erste genommen
+#schauen wo die eindeudigkeit gebraucht wird 
+#MRO wo kommt methode her
+
+
 
 
 

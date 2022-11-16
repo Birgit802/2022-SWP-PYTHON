@@ -1,1 +1,18 @@
-#
+# mit if arbeiten --ohne else weil return gibt wert zurück, wenn wert erfüllt dann aus der if heraus
+#runden- wenn *100 aufpassen, wenn man auf 2 stellen runden will besser das *100 weglassen, klammern, bei 3 stellen--6 eingeben
+
+
+###map und lambda
+#map funktion -methode die auf iterable list(liste, dictionary, tuple), ist wie eine for
+#bei dataframes- methode wird ausgeführt
+#map(function, iterable,[iterable1, iterable2....])
+#lambda wird direkt ausgeführt, anonyme funktion- 
+
+#######Beispiel
+#numbers = [10, 15, 21, 33, 42, 55]
+#mapped_numbers = list(map(lambda x: x * 2 + 3, numbers))
+#print(mapped_numbers)
+#mapped_numbers wird von innen nach aussen ausgeführt- lambda/
+
+
+

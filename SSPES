@@ -1,0 +1,87 @@
+import random
+
+
+def sheldon_has_null(sheldon,eingabe):
+    if sheldon == 0:
+        if eingabe == 1:
+            print("Du hast gegen Dr.Cooper gewonnen. Kann nicht jeder behaupten.")
+        if eingabe == 3:
+            print("Schere köpft Echse!")
+            print("Bazinga!")
+        if eingabe == 4 :
+            print("Besser als Howards Mum")
+        if eingabe == 2:
+            print("Schere schneidet Papier!")
+        
+        
+def sheldon_has_one(sheldon,eingabe):
+    if sheldon==1:
+        if eingabe == 3:
+            print("Stein zerquetscht Echse!")
+            print("Bazinga!")
+        if eingabe == 2:
+            print("Zufall")
+        if eingabe == 4 :
+            print("Du hast gegen Dr.Cooper gewonnen. Kann nicht jeder behaupten.")
+        
+def sheldon_has_two(sheldon,eingabe):
+    if sheldon==2:    
+        if eingabe == 0 :
+            print("Glück gehabt")   
+        if  eingabe == 4:
+            print("Papier widerlegt Spock!")
+            print("Bazinga!")
+        if  eingabe == 3 :
+            print("Du spielst besser als Penny")
+        if  eingabe == 4:
+            print("Papier widerlegt Spock!")
+            print("Bazinga!")
+
+def sheldon_has_three(sheldon,eingabe):
+    if sheldon==3:
+        if eingabe == 1 :
+            print("Du spielst besser als Wollowitz")
+        if  eingabe == 2:
+            print("Echse frißt Papier!")
+            print("Bazinga!")
+        if  eingabe == 0 :
+            print("Gut gemacht!")
+        if  eingabe == 4:
+            print("Echse vergiftet Spock!")
+            print("Bazinga!")
+
+def sheldon_has_four(sheldon,eingabe):
+    if sheldon==4:
+        if eingabe == 3:
+            print("Besser als Leslie Winkle")
+        if  eingabe == 2 :
+            print("Zufallstreffer")
+        if  eingabe == 1:
+            print("Spock verdampft Stein!")
+            print("Bazinga!")
+        if  eingabe == 0:
+            print("Spock zertrümmert Schere!")
+            print("Bazinga!")
+    
+
+    
+if __name__ == "__main__":
+
+    print("Willkommen bei Schere, Stein, Papier, Echse, Spock")
+    print("Wähle 0 für Schere, 1 für Stein, 2 für Papier, 3 für Echse, 4 für Spock")
+
+    eingabe = int(input ("Deine Zahl lautet:")) 
+    zz = [0, 1, 2, 3, 4]
+
+    if eingabe in zz:
+        random.shuffle(zz)  
+        sheldon = zz[0]  
+    
+        print("Sheldon :" + str(sheldon))     
+    
+    sheldon_has_null(sheldon,eingabe)
+    sheldon_has_one(sheldon,eingabe)
+    sheldon_has_two(sheldon,eingabe)
+    sheldon_has_three(sheldon,eingabe)
+    sheldon_has_four(sheldon,eingabe)
+ # while mit input https://www.delftstack.com/de/howto/python/

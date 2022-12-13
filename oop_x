@@ -1,0 +1,113 @@
+class Person:
+    def __init__(self, first_name, last_name, gender):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.gender = gender
+
+    def __str__(self):
+        return f" Vorname: {self.first_name}  Nachname: {self.last_name} Geschlecht: {self.gender}"
+
+
+class Employee(Person):
+    def __init__(self, first_name, last_name, gender, department):
+        super().__init__(first_name, last_name, gender)
+        self.department = department
+
+    def __str__(self):
+        return super().__str__() + f" Abteilung: {self.department}"
+
+
+class GLeader(Employee):
+    def __init__(self, first_name, last_name, gender, department, emp_size):
+        super().__init__(first_name, last_name, gender, department)
+        self.emp_size = emp_size
+
+    def __str__(self):
+        return super().__str__() + f" Mitarbeiteranzahl:  {self.emp_size}"
+
+
+class Company:
+    def __init__(self, comp_name):
+        self.comp_name = comp_name
+        self.employees = []
+
+    def __str__(self):
+        return f" Firmenname: {self.comp_name}"
+
+    def settle(self):
+        self.employees = [
+
+            Employee("Minni", "Maus", "Female", "IT"),
+            GLeader("Mickey", "Maus", "Male", "HR", 8),
+            GLeader("Donald", "Duck", "Male", "Finance", 10),
+            Employee("Daisy", "Duck", "Female", "HR"),
+            GLeader("Dagobert", "Duck", "Male", "Finance", 3),
+            Employee("Pluto", "Disney", "Male","IT"),
+            Employee("Tom", "Cat", "Male", "Quality"),
+            Employee("Jerry", "Mouse", "Male", "Quality"),
+            GLeader("Tweety","Bird", "Male", "Quality", 5),
+            Employee("Goofy","Dog", "Male", "IT")
+
+        ]
+
+    def sum_emp(self):
+        counter = 0
+        for employee in self.employees:
+            if type(employee) == Employee:
+                counter += 1
+        return counter
+
+    def sum_gleader(self):
+        counter = 0
+        for gleader in self.employees:
+            if type(gleader) == GLeader:
+                counter += 1
+        return counter
+
+    def sum_dep(self):
+        dep = []
+        counter = 0
+        for i in self.employees:
+            if not i.department in dep:
+                counter += 1
+                dep.append(i.department)
+        return counter
+
+    def strong_dep(self):
+        dict1 = {}
+        for i in self.employees:
+            dict1[i.department] = 0
+        for i in self.employees:
+            dict1[i.department] += 1
+        counter = 0
+        for i in dict1:
+            if counter < dict1[i]:
+                counter = dict1[i]
+        dict1 = list(filter(lambda x: dict1[x] == counter, dict1.keys()))
+        return dict1
+
+    def percentage(self):
+        temp = {}
+        for e in self.employees:
+            if e.gender in temp.keys():
+                temp[e.gender] += 1 / len(self.employees)
+            else:
+                temp[e.gender] = 1 / len(self.employees)
+        for key in temp.keys():
+            temp[key] = round(temp[key] * 100, 3)
+        return temp
+
+
+
+if __name__ == "__main__":
+    c = Company("SQL")
+
+    c.settle()
+    for employee in c.employees:
+        print(employee)
+    print(c)
+    print("Summe der Gruppenleiter: " + str(c.sum_gleader()))
+    print("Summe der Mitarbeiter: " + str(c.sum_emp()))
+    print ("Summe der Abteilungen : " + str(c.sum_dep()))
+    print("Die mitarbeiterstärkste Abteilung ist " + str(c.strong_dep()))
+    print("Verteilung männliche und weibliche Mitarbeiter in % : " + str(c.percentage()))

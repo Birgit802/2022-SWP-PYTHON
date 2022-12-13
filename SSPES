@@ -68,20 +68,24 @@ def sheldon_has_four(sheldon,eingabe):
 if __name__ == "__main__":
 
     print("Willkommen bei Schere, Stein, Papier, Echse, Spock")
-    print("Wähle 0 für Schere, 1 für Stein, 2 für Papier, 3 für Echse, 4 für Spock")
+    bedingung = True
+    while bedingung :
+        print("Wähle 0 für Schere, 1 für Stein, 2 für Papier, 3 für Echse, 4 für Spock")
 
-    eingabe = int(input ("Deine Zahl lautet:")) 
-    zz = [0, 1, 2, 3, 4]
+        eingabe = int(input ("Deine Zahl lautet:")) 
+        zz = [0, 1, 2, 3, 4]
 
-    if eingabe in zz:
-        random.shuffle(zz)  
-        sheldon = zz[0]  
-    
-        print("Sheldon :" + str(sheldon))     
-    
-    sheldon_has_null(sheldon,eingabe)
-    sheldon_has_one(sheldon,eingabe)
-    sheldon_has_two(sheldon,eingabe)
-    sheldon_has_three(sheldon,eingabe)
-    sheldon_has_four(sheldon,eingabe)
- # while mit input https://www.delftstack.com/de/howto/python/
+        if eingabe in zz:
+            random.shuffle(zz)  
+            sheldon = zz[0]  
+        
+            print("Sheldon :" + str(sheldon))     
+        
+        sheldon_has_null(sheldon,eingabe)
+        sheldon_has_one(sheldon,eingabe)
+        sheldon_has_two(sheldon,eingabe)
+        sheldon_has_three(sheldon,eingabe)
+        sheldon_has_four(sheldon,eingabe)
+        bedingung = input("Drücken Sie y wenn Sie nochmal spielen wollen") == ("y")
+ 
+ 

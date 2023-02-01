@@ -1,0 +1,49 @@
+from flask import *
+from flask import Flask,render_template
+from flask_mysqldb import MySQL
+
+#https://thinkinfi.com/flask-adding-html-and-css/
+app = Flask(__name__, template_folder='templates', static_folder='staticFiles')
+
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '********'
+app.config['MYSQL_DB'] = "SSPES"
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
+mysql = MySQL(app)
+
+
+
+@app.route('/')
+def homepage():
+    return render_template('index.html')
+
+
+@app.route("/get", methods=['GET'])
+def get():
+    cursor = mysql.connection.cursor()
+    cursor.execute("Select * from analyse")
+    result = cursor.fetchall()
+    return jsonify(result)
+
+
+# https://www.krazyprogrammer.com/2020/12/insert-data-in-mysql-using-flask-create.html
+# https://www.krazyprogrammer.com/2020/11/run-html-page-in-python-flask-web.html
+#https://www.google.com/search?client=firefox-b-d&q=mysql+flas#fpstate=ive&scso=_jxKjY-LtDK-Nxc8PlL6kgAg_68:0&vld=cid:7803a3ce,vid:51F_frStZCQ,st:63
+
+
+@app.route("/add", methods=['POST', 'GET'])
+def add():
+    data = request.json
+    data= [data[key] for key in data]
+    print(data)
+    cursor = mysql.connection.cursor()
+    cursor.execute("insert into analyse(winner,draw, symbol) values (%s,%s,%s) ", data)
+    mysql.connection.commit()
+    print("Spieldaten erfolgreich in der Datenbank gespeichert.")
+    return "DONE"
+
+
+if __name__ == '__main__':
+    app.run(port=8888)

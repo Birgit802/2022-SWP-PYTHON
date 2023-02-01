@@ -1,0 +1,176 @@
+import random
+
+import requests
+
+
+def sheldon_has_null(sheldon, user):
+    draw = False
+    winner = False
+    if sheldon == 0:
+        if user == 0:
+            print("Unentschieden")
+            print("Bazinga!")
+            draw = True
+        if user == 1:
+            print("Du hast gegen Dr.Cooper gewonnen. Kann nicht jeder behaupten.")
+            winner = True
+        if user == 3:
+            print("Schere köpft Echse!")
+            print("Bazinga!")
+        if user == 4:
+            print("Besser als Howards Mum")
+        if user == 2:
+            print("Schere schneidet Papier!")
+    return winner, draw
+
+
+def sheldon_has_one(sheldon, user):
+    winner = False
+    draw = False
+    if sheldon == 1:
+        if user == 1:
+            print("Unentschieden")
+            print("Bazinga!")
+            draw = True
+        if user == 3:
+            print("Stein zerquetscht Echse!")
+            print("Bazinga!")
+        if user == 2:
+            print("Zufall")
+            winner = True
+        if user == 4:
+            print("Du hast gegen Dr.Cooper gewonnen. Kann nicht jeder behaupten.")
+            winner = True
+    return winner, draw
+
+
+def sheldon_has_two(sheldon, user):
+    winner = False
+    draw = False
+    if sheldon == 2:
+        if user == 2:
+            print("Unentschieden")
+            print("Bazinga!")
+            draw = True
+        if user == 0:
+            print("Glück gehabt")
+            winner = True
+        if user == 4:
+            print("Papier widerlegt Spock!")
+            print("Bazinga!")
+        if user == 3:
+            print("Du spielst besser als Penny")
+            winner = True
+    return winner, draw
+
+
+def sheldon_has_three(sheldon, user):
+    winner = False
+    draw = True
+    if sheldon == 3:
+        if user == 3:
+            print("Unentschieden")
+            print("Bazinga!")
+            draw=True
+        if user == 1:
+            print("Du spielst besser als Wollowitz")
+            winner = True
+        if user == 2:
+            print("Echse frißt Papier!")
+            print("Bazinga!")
+        if user == 0:
+            print("Gut gemacht!")
+            winner = True
+        if user == 4:
+            print("Echse vergiftet Spock!")
+            print("Bazinga!")
+    return winner, draw
+
+
+def sheldon_has_four(sheldon, user):
+    winner = False
+    draw = False
+    if sheldon == 4:
+        if user == 4:
+            print("Unentschieden")
+            print("Bazinga!")
+            draw = True
+        if user == 3:
+            print("Besser als Leslie Winkle")
+            winner = True
+        if user == 2:
+            print("Zufallstreffer")
+            winner = True
+        if user == 1:
+            print("Spock verdampft Stein!")
+            print("Bazinga!")
+        if user == 0:
+            print("Spock zertrümmert Schere!")
+            print("Bazinga!")
+    return winner, draw
+
+
+def saving(winner, draw, symbol):
+    response = requests.post(
+        #  /route von Route von der FlaskAPI
+        "http://127.0.0.1:8888/add",
+
+        json={
+            "winner": winner,
+            "draw": draw,
+            "symbol": symbol
+
+        }
+    )
+    print(response)
+
+
+def winn_draw(sheldon, user):
+    return sheldon_has_null(sheldon, user) or \
+        sheldon_has_one(sheldon, user) or \
+        sheldon_has_two(sheldon, user) or \
+        sheldon_has_three(sheldon, user) or \
+        sheldon_has_four(sheldon, user)
+
+
+def getSymbol(user):
+    if user == 0:
+        return "Schere"
+    elif user == 1:
+        return "Stein"
+    elif user == 2:
+        return "Papier"
+    elif user == 3:
+        return "Echse"
+    elif user == 4:
+        return "Spock"
+
+
+if __name__ == "__main__":
+    # winner, draw = sheldon_has_null()
+    print("Willkommen bei Schere, Stein, Papier, Echse, Spock")
+    bedingung = True
+    while bedingung:
+        print("Wähle 0 für Schere, 1 für Stein, 2 für Papier, 3 für Echse, 4 für Spock")
+
+        user = int(input("Deine Zahl lautet:"))
+        zz = [0, 1, 2, 3, 4]
+
+        if user in zz:
+            random.shuffle(zz)
+            sheldon = zz[0]
+
+            print("Sheldon :" + str(sheldon))
+            win, draw = winn_draw(sheldon, user)
+           # print("Draw!!!",draw)
+            if win :
+                saving("Spieler", draw, getSymbol(user))
+            elif draw:
+                saving("Niemand", draw, getSymbol(sheldon))
+            else:
+                saving("Sheldon",draw, getSymbol(sheldon))
+        # https://stackoverflow.com/questions/26961427/asking-the-user-if-they-want-to-play-again
+        play_again = input("Möchtest du nochmal spielen (j/n)? ").lower()
+        if play_again[0] != 'j':
+            print("Du hast dich für Nein entschieden! Auf Wiedersehen!")
+            break

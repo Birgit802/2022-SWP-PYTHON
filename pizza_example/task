@@ -1,0 +1,19 @@
+Eine Pizzeria erstellt je nach Parameter
+ verschiedene Pizzen
+(Salami, Hawaii, Calzone, Quattro Stagioni),
+die immer gleich zubereitet werden
+(backen, schneiden, einpacken).
+Um den regionalen Wünschen der Menschen
+in Berlin, Hamburg und Rostock zu genügen,
+müssen spezielle Pizzen für eben
+diese Städte erstellt werden.
+Diese Erstellung geschieht in den
+speziellen Unterklassen der Pizzeria
+(BerlinPizzeria, HamburgPizzeria, RostockPizzeria),
+die die speziellen Pizzen erstellen
+(BerlinSalami, RostockCalzone etc.).
+Die Verarbeitung ist in allen Fällen gleich
+und erfolgt in der abstrakten Pizzeriaklasse,
+die nur die abstrahierte Pizzaschnittstelle kennt.
+Schnell können somit neue Pizzasorten und
+ Pizzerias ins System integriert werden.

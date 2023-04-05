@@ -1,0 +1,6 @@
+Methode	    Einfach-verkettet	Doppelt-verkettet	ArrayList
+add_content	        O(n)	              O(1)	        O(1)
+to_string	        O(n)	              O(n)	        O(n)
+length_from	        O(n)	              O(n)	        O(1)
+delete	            O(n)	              O(n)	        O(n)
+https://www.happycoders.eu/de/algorithmen/o-notation-zeitkomplexitaet/
